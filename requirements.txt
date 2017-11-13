@@ -1,4 +1,4 @@
 --index-url https://pypi.python.org/simple/
 
-obnl-core=0.3.0
+-e git://github.com/IntegrCiTy/obnl#egg=obnl-core>=0.3.0
 -e git://github.com/IntegrCiTy/connection-util#egg=connection-util

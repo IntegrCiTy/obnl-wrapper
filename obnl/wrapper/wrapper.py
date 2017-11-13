@@ -1,6 +1,7 @@
 import logging
 
 from obnl.message.default_pb2 import MetaMessage
+from obnl.message.coside.coside_pb2 import *
 
 from ict.connection.node import Node
 from obnl.core.impl.server import Scheduler
