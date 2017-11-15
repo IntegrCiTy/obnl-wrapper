@@ -38,9 +38,6 @@ class Wrapper(Node):
         elif m.details.Is(StartSimulation.DESCRIPTOR):
             if self._init_onbl and self._schedule:
 
-                Wrapper.LOGGER.debug(self._init_onbl)
-                Wrapper.LOGGER.debug(self._schedule)
-
                 self._scheduler = Scheduler(self.host, 'obnl_vhost', 'obnl', 'obnl',
                                             'scheduler.json',
                                             self._init_onbl, self._schedule,
