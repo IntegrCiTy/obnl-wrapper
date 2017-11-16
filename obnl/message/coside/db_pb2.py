@@ -7,20 +7,20 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-
+from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
-from obnl.message.coside import coside_pb2 as message_dot_coside_dot_coside__pb2
+from message.coside import coside_pb2 as message_dot_coside_dot_coside__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='message/coside/db.proto',
   package='backend.db',
   syntax='proto3',
-  serialized_pb=_b('\n\x17message/coside/db.proto\x12\nbackend.db\x1a\x1bmessage/coside/coside.proto\"]\n\x0c\x44\x61taRequired\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tnode_name\x18\x02 \x01(\t\x12.\n\x05\x62lock\x18\x03 \x01(\x0e\x32\x1f.backend.coside.SimulationBlock\"e\n\x0cHeatPumpInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06t_lake\x18\x02 \x01(\x02\x12\r\n\x05t_set\x18\x03 \x01(\x02\x12\x12\n\nmflow_lake\x18\x04 \x01(\x02\x12\x16\n\x0emflow_lake_src\x18\x05 \x01(\x02\"z\n\tStoreData\x12\x15\n\rsimulation_id\x18\x01 \x01(\t\x12\x0f\n\x07node_id\x18\x02 \x01(\t\x12\x16\n\x0e\x61ttribute_name\x18\x03 \x01(\t\x12\x10\n\x08timestep\x18\x04 \x01(\x02\x12\r\n\x05value\x18\x05 \x01(\x02\x12\x0c\n\x04unit\x18\x06 \x01(\tb\x06proto3')
+  serialized_pb=_b('\n\x17message/coside/db.proto\x12\nbackend.db\x1a\x1bmessage/coside/coside.proto\"]\n\x0c\x44\x61taRequired\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tnode_name\x18\x02 \x01(\t\x12.\n\x05\x62lock\x18\x03 \x01(\x0e\x32\x1f.backend.coside.SimulationBlock\"s\n\rHeatPump1Info\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tt_in_cold\x18\x02 \x01(\x02\x12\x10\n\x08t_in_hot\x18\x03 \x01(\x02\x12\r\n\x05t_set\x18\x04 \x01(\x02\x12\x10\n\x08mflow_hs\x18\x05 \x01(\x02\x12\x10\n\x08mflow_cs\x18\x06 \x01(\x02\"\x84\x01\n\rHeatPump2Info\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tt_in_cold\x18\x02 \x01(\x02\x12\x10\n\x08t_in_hot\x18\x03 \x01(\x02\x12\x0e\n\x06t_heat\x18\x04 \x01(\x02\x12\x0e\n\x06p_heat\x18\x05 \x01(\x02\x12\x10\n\x08mflow_hs\x18\x06 \x01(\x02\x12\x10\n\x08mflow_cs\x18\x07 \x01(\x02\"\xc7\x01\n\x12ThermalNetworkInfo\x12\x12\n\nt_ret_cool\x18\x01 \x01(\x02\x12\x12\n\nt_ret_heat\x18\x02 \x01(\x02\x12\r\n\x05t_ret\x18\x03 \x01(\x02\x12\r\n\x05t_sup\x18\x04 \x01(\x02\x12\x12\n\nt_sup_cool\x18\x05 \x01(\x02\x12\x12\n\nt_sup_heat\x18\x06 \x01(\x02\x12\x15\n\rmflow_central\x18\x07 \x01(\x02\x12\x15\n\rmflow_heating\x18\x08 \x01(\x02\x12\x15\n\rmflow_cooling\x18\t \x01(\x02\"\x1e\n\x10PowerNetworkInfo\x12\n\n\x02id\x18\x01 \x01(\t\"\x1a\n\x0c\x43onsumerInfo\x12\n\n\x02id\x18\x01 \x01(\t\"z\n\tStoreData\x12\x15\n\rsimulation_id\x18\x01 \x01(\t\x12\x0f\n\x07node_id\x18\x02 \x01(\t\x12\x16\n\x0e\x61ttribute_name\x18\x03 \x01(\t\x12\x10\n\x08timestep\x18\x04 \x01(\x02\x12\r\n\x05value\x18\x05 \x01(\x02\x12\x0c\n\x04unit\x18\x06 \x01(\tb\x06proto3')
   ,
   dependencies=[message_dot_coside_dot_coside__pb2.DESCRIPTOR,])
 
@@ -72,44 +72,51 @@ _DATAREQUIRED = _descriptor.Descriptor(
 )
 
 
-_HEATPUMPINFO = _descriptor.Descriptor(
-  name='HeatPumpInfo',
-  full_name='backend.db.HeatPumpInfo',
+_HEATPUMP1INFO = _descriptor.Descriptor(
+  name='HeatPump1Info',
+  full_name='backend.db.HeatPump1Info',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id', full_name='backend.db.HeatPumpInfo.id', index=0,
+      name='id', full_name='backend.db.HeatPump1Info.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='t_lake', full_name='backend.db.HeatPumpInfo.t_lake', index=1,
+      name='t_in_cold', full_name='backend.db.HeatPump1Info.t_in_cold', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='t_set', full_name='backend.db.HeatPumpInfo.t_set', index=2,
+      name='t_in_hot', full_name='backend.db.HeatPump1Info.t_in_hot', index=2,
       number=3, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='mflow_lake', full_name='backend.db.HeatPumpInfo.mflow_lake', index=3,
+      name='t_set', full_name='backend.db.HeatPump1Info.t_set', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='mflow_lake_src', full_name='backend.db.HeatPumpInfo.mflow_lake_src', index=4,
+      name='mflow_hs', full_name='backend.db.HeatPump1Info.mflow_hs', index=4,
       number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mflow_cs', full_name='backend.db.HeatPump1Info.mflow_cs', index=5,
+      number=6, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -127,7 +134,229 @@ _HEATPUMPINFO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=163,
-  serialized_end=264,
+  serialized_end=278,
+)
+
+
+_HEATPUMP2INFO = _descriptor.Descriptor(
+  name='HeatPump2Info',
+  full_name='backend.db.HeatPump2Info',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='backend.db.HeatPump2Info.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='t_in_cold', full_name='backend.db.HeatPump2Info.t_in_cold', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='t_in_hot', full_name='backend.db.HeatPump2Info.t_in_hot', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='t_heat', full_name='backend.db.HeatPump2Info.t_heat', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='p_heat', full_name='backend.db.HeatPump2Info.p_heat', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mflow_hs', full_name='backend.db.HeatPump2Info.mflow_hs', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mflow_cs', full_name='backend.db.HeatPump2Info.mflow_cs', index=6,
+      number=7, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=281,
+  serialized_end=413,
+)
+
+
+_THERMALNETWORKINFO = _descriptor.Descriptor(
+  name='ThermalNetworkInfo',
+  full_name='backend.db.ThermalNetworkInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='t_ret_cool', full_name='backend.db.ThermalNetworkInfo.t_ret_cool', index=0,
+      number=1, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='t_ret_heat', full_name='backend.db.ThermalNetworkInfo.t_ret_heat', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='t_ret', full_name='backend.db.ThermalNetworkInfo.t_ret', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='t_sup', full_name='backend.db.ThermalNetworkInfo.t_sup', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='t_sup_cool', full_name='backend.db.ThermalNetworkInfo.t_sup_cool', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='t_sup_heat', full_name='backend.db.ThermalNetworkInfo.t_sup_heat', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mflow_central', full_name='backend.db.ThermalNetworkInfo.mflow_central', index=6,
+      number=7, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mflow_heating', full_name='backend.db.ThermalNetworkInfo.mflow_heating', index=7,
+      number=8, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='mflow_cooling', full_name='backend.db.ThermalNetworkInfo.mflow_cooling', index=8,
+      number=9, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=416,
+  serialized_end=615,
+)
+
+
+_POWERNETWORKINFO = _descriptor.Descriptor(
+  name='PowerNetworkInfo',
+  full_name='backend.db.PowerNetworkInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='backend.db.PowerNetworkInfo.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=617,
+  serialized_end=647,
+)
+
+
+_CONSUMERINFO = _descriptor.Descriptor(
+  name='ConsumerInfo',
+  full_name='backend.db.ConsumerInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='backend.db.ConsumerInfo.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=649,
+  serialized_end=675,
 )
 
 
@@ -192,13 +421,17 @@ _STOREDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=266,
-  serialized_end=388,
+  serialized_start=677,
+  serialized_end=799,
 )
 
 _DATAREQUIRED.fields_by_name['block'].enum_type = message_dot_coside_dot_coside__pb2._SIMULATIONBLOCK
 DESCRIPTOR.message_types_by_name['DataRequired'] = _DATAREQUIRED
-DESCRIPTOR.message_types_by_name['HeatPumpInfo'] = _HEATPUMPINFO
+DESCRIPTOR.message_types_by_name['HeatPump1Info'] = _HEATPUMP1INFO
+DESCRIPTOR.message_types_by_name['HeatPump2Info'] = _HEATPUMP2INFO
+DESCRIPTOR.message_types_by_name['ThermalNetworkInfo'] = _THERMALNETWORKINFO
+DESCRIPTOR.message_types_by_name['PowerNetworkInfo'] = _POWERNETWORKINFO
+DESCRIPTOR.message_types_by_name['ConsumerInfo'] = _CONSUMERINFO
 DESCRIPTOR.message_types_by_name['StoreData'] = _STOREDATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -209,12 +442,40 @@ DataRequired = _reflection.GeneratedProtocolMessageType('DataRequired', (_messag
   ))
 _sym_db.RegisterMessage(DataRequired)
 
-HeatPumpInfo = _reflection.GeneratedProtocolMessageType('HeatPumpInfo', (_message.Message,), dict(
-  DESCRIPTOR = _HEATPUMPINFO,
+HeatPump1Info = _reflection.GeneratedProtocolMessageType('HeatPump1Info', (_message.Message,), dict(
+  DESCRIPTOR = _HEATPUMP1INFO,
   __module__ = 'message.coside.db_pb2'
-  # @@protoc_insertion_point(class_scope:backend.db.HeatPumpInfo)
+  # @@protoc_insertion_point(class_scope:backend.db.HeatPump1Info)
   ))
-_sym_db.RegisterMessage(HeatPumpInfo)
+_sym_db.RegisterMessage(HeatPump1Info)
+
+HeatPump2Info = _reflection.GeneratedProtocolMessageType('HeatPump2Info', (_message.Message,), dict(
+  DESCRIPTOR = _HEATPUMP2INFO,
+  __module__ = 'message.coside.db_pb2'
+  # @@protoc_insertion_point(class_scope:backend.db.HeatPump2Info)
+  ))
+_sym_db.RegisterMessage(HeatPump2Info)
+
+ThermalNetworkInfo = _reflection.GeneratedProtocolMessageType('ThermalNetworkInfo', (_message.Message,), dict(
+  DESCRIPTOR = _THERMALNETWORKINFO,
+  __module__ = 'message.coside.db_pb2'
+  # @@protoc_insertion_point(class_scope:backend.db.ThermalNetworkInfo)
+  ))
+_sym_db.RegisterMessage(ThermalNetworkInfo)
+
+PowerNetworkInfo = _reflection.GeneratedProtocolMessageType('PowerNetworkInfo', (_message.Message,), dict(
+  DESCRIPTOR = _POWERNETWORKINFO,
+  __module__ = 'message.coside.db_pb2'
+  # @@protoc_insertion_point(class_scope:backend.db.PowerNetworkInfo)
+  ))
+_sym_db.RegisterMessage(PowerNetworkInfo)
+
+ConsumerInfo = _reflection.GeneratedProtocolMessageType('ConsumerInfo', (_message.Message,), dict(
+  DESCRIPTOR = _CONSUMERINFO,
+  __module__ = 'message.coside.db_pb2'
+  # @@protoc_insertion_point(class_scope:backend.db.ConsumerInfo)
+  ))
+_sym_db.RegisterMessage(ConsumerInfo)
 
 StoreData = _reflection.GeneratedProtocolMessageType('StoreData', (_message.Message,), dict(
   DESCRIPTOR = _STOREDATA,
