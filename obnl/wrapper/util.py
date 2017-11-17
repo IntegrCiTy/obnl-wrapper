@@ -14,12 +14,21 @@ def convert_protobuf_to_data(message):
         for node in data['nodes']:
             res['nodes'][node['name']] = {}
             if 'inputs' in node:
-                res['nodes'][node['name']] = node['inputs']
+                res['nodes'][node['name']]['inputs'] = node['inputs']
             if 'outputs' in node:
-                res['nodes'][node['name']] = node['outputs']
+                res['nodes'][node['name']]['outputs'] = node['outputs']
 
         return res
     elif type(message) is Schedule:
-        return json.loads(json_format.MessageToJson(message, preserving_proto_field_name=True))
+        data = json.loads(json_format.MessageToJson(message, preserving_proto_field_name=True))
+
+        res = dict()
+        res['simulation_name'] = data["simulation_name"]
+        res['steps'] = data["steps"]
+        res['schedule'] = list()
+        for nodes in data['schedule']:
+            res['schedule'].append(nodes)
+
+        return res
     else:
         return json.loads(json_format.MessageToJson(message, preserving_proto_field_name=True))
