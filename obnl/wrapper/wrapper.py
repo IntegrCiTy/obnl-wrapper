@@ -36,12 +36,15 @@ class Wrapper(Node):
             self._schedule = convert_protobuf_to_data(sch)
 
         elif m.details.Is(StartSimulation.DESCRIPTOR):
+            self.LOGGER.debug("Have to start the simulation")
             if self._init_onbl and self._schedule:
+                self.LOGGER.debug("Initialisation is OK")
 
                 self._scheduler = Scheduler(self.host, 'obnl_vhost', 'obnl', 'obnl',
                                             'scheduler.json',
                                             self._init_onbl, self._schedule,
                                             log_level=logging.DEBUG)
+                self.LOGGER.debug("RUN")
                 self._scheduler.start()
 
         self._channel.basic_ack(delivery_tag=method.delivery_tag)
