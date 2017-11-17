@@ -27,7 +27,7 @@ def convert_protobuf_to_data(message):
         res['steps'] = data["steps"]
         res['schedule'] = list()
         for nodes in data['schedule']:
-            res['schedule'].append(nodes)
+            res['schedule'].append(nodes['node_names'])
 
         return res
     else:
