@@ -1,11 +1,11 @@
 import logging
 
-from obnl.message.default_pb2 import MetaMessage
-from obnl.message.coside.coside_pb2 import *
-
 from ict.connection.node import Node
 from obnl.core.impl.server import Scheduler
+from obnl.message.default_pb2 import MetaMessage
 from obnl.wrapper.util import convert_protobuf_to_data
+
+from obnl.message.backend.simulation_pb2 import SimulationInit, Schedule, StartSimulation
 
 
 class WrapperNode(Node):

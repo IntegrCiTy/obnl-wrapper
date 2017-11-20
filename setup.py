@@ -14,7 +14,7 @@ setup(name='obnl-wrapper',
 
       install_requires=['pika', 'protobuf', 'obnl-core'],
 
-      packages=['obnl.wrapper', 'obnl.message', 'obnl.message.coside'],
+      packages=['obnl.wrapper', 'obnl.message', 'obnl.message.backend'],
 
       description='An open tool for co-simulation',
       long_description='README.md',

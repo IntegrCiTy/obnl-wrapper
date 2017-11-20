@@ -2,7 +2,7 @@ import json
 
 from google.protobuf import json_format
 
-from obnl.message.coside.coside_pb2 import SimulationInit, Schedule
+from obnl.message.backend.simulation_pb2 import SimulationInit, Schedule
 
 
 def convert_protobuf_to_data(message):
