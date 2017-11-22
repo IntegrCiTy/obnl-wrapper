@@ -2,3 +2,4 @@
 
 -e git://github.com/IntegrCiTy/obnl@feature/connection-util#egg=obnl-core>=0.3.0
 -e git://github.com/IntegrCiTy/connection-util#egg=connection-util
+-e git://github.com/IntegrCiTy/messaging#egg=ict-messaging&subdirectory=python

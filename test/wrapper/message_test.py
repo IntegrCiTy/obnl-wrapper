@@ -1,3 +1,6 @@
+from ict.protobuf.backend.simulation_pb2 import *
+from obnl.wrapper.util import convert_protobuf_to_data
+
 simulation_message = SimulationInit()
 
 nodeA = simulation_message.nodes.add()
@@ -27,6 +30,5 @@ link_output = link.output
 link_output.node = "C"
 link_output.attribute = "t1"
 
-from obnl.core.impl import convert_protobuf_to_data
 
 convert_protobuf_to_data(simulation_message)

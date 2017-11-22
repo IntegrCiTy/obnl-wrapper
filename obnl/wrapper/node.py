@@ -2,10 +2,10 @@ import logging
 
 from ict.connection.node import Node
 from obnl.core.impl.server import Scheduler
-from obnl.message.default_pb2 import MetaMessage
+from ict.protobuf.default_pb2 import MetaMessage
 from obnl.wrapper.util import convert_protobuf_to_data
 
-from obnl.message.backend.simulation_pb2 import SimulationInit, Schedule, StartSimulation
+from ict.protobuf.backend.simulation_pb2 import SimulationInit, Schedule, StartSimulation
 
 
 class WrapperNode(Node):
