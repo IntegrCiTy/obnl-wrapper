@@ -2,7 +2,7 @@ from setuptools import setup
 import platform
 
 setup(name='obnl-wrapper',
-      version='0.3.1',
+      version='0.3.3',
 
       maintainer='The OBNL Team',
       maintainer_email='gillian.basso@hevs.ch',
