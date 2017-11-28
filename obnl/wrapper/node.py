@@ -6,7 +6,7 @@ from obnl.core.impl.server import Scheduler
 from ict.protobuf.default_pb2 import MetaMessage
 from obnl.wrapper.util import convert_protobuf_to_data
 
-from ict.protobuf.backend.simulation_pb2 import SimulationInit, Schedule, StartSimulation
+from ict.protobuf.simulation_pb2 import SimulationInit, Schedule, StartSimulation
 
 
 class WrapperNode(Node):
@@ -40,15 +40,12 @@ class WrapperNode(Node):
             self._schedule = convert_protobuf_to_data(sch)
 
         elif m.details.Is(StartSimulation.DESCRIPTOR):
-            self.LOGGER.debug("Have to start the simulation")
             if self._init_onbl and self._schedule:
-                self.LOGGER.debug("Initialisation is OK")
 
                 self._scheduler = Scheduler(self.host, 'obnl_vhost', 'obnl', self._obnl_password,
                                             self._obnl_file,
                                             self._init_onbl, self._schedule,
                                             log_level=logging.DEBUG)
-                self.LOGGER.debug("RUN")
                 threading.Thread(self._scheduler.start()).start()
 
         self._channel.basic_ack(delivery_tag=method.delivery_tag)
