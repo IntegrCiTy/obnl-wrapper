@@ -1,4 +1,5 @@
 import logging
+import threading
 
 from ict.connection.node import Node
 from obnl.core.impl.server import Scheduler
@@ -48,6 +49,6 @@ class WrapperNode(Node):
                                             self._init_onbl, self._schedule,
                                             log_level=logging.DEBUG)
                 self.LOGGER.debug("RUN")
-                self._scheduler.start()
+                threading.Thread(self._scheduler.start()).start()
 
         self._channel.basic_ack(delivery_tag=method.delivery_tag)
