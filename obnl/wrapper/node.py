@@ -2,11 +2,12 @@ import logging
 import threading
 
 from ict.connection.node import Node
+
 from obnl.core.impl.server import Scheduler
-from ict.protobuf.default_pb2 import MetaMessage
 from obnl.wrapper.util import convert_protobuf_to_data
 
 from ict.protobuf.simulation_pb2 import SimulationInit, Schedule, StartSimulation
+from ict.protobuf.core_pb2 import MetaMessage
 
 
 class WrapperNode(Node):
